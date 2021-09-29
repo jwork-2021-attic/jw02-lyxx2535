@@ -1,0 +1,53 @@
+# W02
+
+## 任务一
+
+1、类图如下：
+![](http://www.plantuml.com/plantuml/png/RLDBKiCm3Dtx55xocUG2OJgbcsvOC1JOC2pSHWqPN3lZ3r0ATqUnhTJEq4tb9-dfwPEbTS8uVv2iLmxCNko0RxH1yyGu_ZvqttAfHNjnsPm1Yn44R9pfLSSxSFTIg17zPMmdXRLyvRTR2KGNeh7AooiNHUg0UGtBs3_5CF8WKQRghbS2sJ9P5ajgsxjUAn93RzuLFYezmiz2UaWoIIXo9s9AGf53CcskRV3KE0b2plaid8x6B18vdRurHXofkrYTQfuAMXd_Yy60IruY0EKFVEs5QMFo7jqoT6gQ6T3DWMsYNcjlsh6BOAoE3qAzvpCpzFwlmN9hr4bn1Mk0RpgdQ7Ft1j5gSXGbF98ZCgTJ3FT6mJI9w9e9mw71qr22uog5iK3dEP705-oyIxT0Ox_vgUiuKJPXLRMObiGOMVoggcXRZ8KKhX4wHqQ9aJB_5W8pyEiYE0sXhXSZAH0GA5FQ4bJh3_8F)
+
+时序图如下：
+![](http://www.plantuml.com/plantuml/png/SoWkIImgAStDuKfCBialKe209pkQd-nOzNH5yxE-ISyw9ZoVrV9ondo5n6A5ZDASKXIL2YyQ6fyksG9a06NpSr9o4_CK59ITSXAJinMuKlDACaig8Ug09ZtTrVzqvWgGmkByeX85vV2Cp99KL4NJsf_itWPIKL81L11GMbIGayh51JLNDrhPlIYrCjOEejzAuKNVzgVxfdFbvPUaAkIaffLOGLtph7lfipcTS1in3G3x0sW0H0d4WABCz8mIAw01ppks0z6pdlPdFKiX0V5YukeNNSk0mG5LZsaUH03c8eYo9_iNFcjSZwaOv3ShXQSRsf2LFLqxusdhKeZ_kHnIyrA0KG80)
+
+2、
+
+这样写的好处：类和方法都为情节而服务。
+
+1、**定义类上**：
+
+因为要把七个葫芦娃排成一行，所以定义表示行的类Line和表示葫芦的类Gourd。
+
+葫芦娃是Linable接口的具体实现，Linable接口定义了所有可以进行排序的物体，包括了物体在行中所处的位置Position和值Value两个待实现的方法。葫芦娃除了具体实现这些方法，还需要独特的颜色和位置，所以Gourd类拥有rgb和Position的成员变量，除了对属性的操作函数，还通过rank等方法可以调整在行中的Position。
+Gourd是枚举类也可以轻松定义葫芦娃和他们初始时的顺序。
+
+Position是定义在Line里面的内部类，拥有private的成员变量Linable。因为Linable接口可以有多种形式，所以Position类定义的对象也随之实现了多态。
+Sorter作为接口规定了一个排序需要实现的功能——载入数组、排序、返回排序信息，而冒泡排序是一种具体实现。
+
+Geezer表示老头，为了让葫芦娃排序并可视化，老人拥有成员变量Sorter并通过Lineup函数让排序过程可以可视化。
+
+虽然Position和Linable的关系还是没太看懂，但Position作为一种可以排序的物体，继承后可赋予位置和值。
+
+2、**定义方法上**：
+
+老头的getPlan()拟人地像是先在脑子里生成排序的想法，再用plan让葫芦娃分类。
+
+
+
+可改进之处：
+
+1、Linable和Position的重复，所以将Linable定义成类，拥有Position属性，且可以排序的物体应该具有交换位置的方法，而不应该局限于Gourd，所以将交换位置的方法也移至Linable。
+
+2、数目增加后枚举类比较麻烦，将所有实例放在第一行较为繁琐，改为class比较好，并考虑通过其他的成员变量表示位置
+但是不是枚举类了以后，通过value获取gourd成员的方法也随之变得略显繁琐。
+
+3、老人不需要定义the Geezer成员变量 感觉多此一举？
+
+4、成员变量应该写在方法前面便于阅读？
+
+## 任务二
+类图如下：
+![](http://www.plantuml.com/plantuml/png/bLFDJlCm4BpxANpyVfIyG10glVJ2eRI22-BW9jiegcC7_nIgmBkpiREg7GaaSeapkpkpinklh1F6-LwoJZamHr43tsk3nv5nVCwwQxZKeldpjxe25ZC8s3lJgPQtuBPIg0dzPAoMmbg-zeU31A8BsQZo_C95LZfWNSKIzZSnJ3nNeWVVrQTVyxnILKvstoc1ROt4myz2UeXCMsqxrsd5X_cGcWP7OIJCqziqbjSyJUmHZ79jYgMUKmRiDkaNnamEdLD_DZKyUDeAcKInvQASZeT59d8wVMUCkEJJ8iqnevNndMqDt1pD2JPUc2PM7p4kmmnCjG3Q9N2OkJVQcsQo4GxhoqweKpfDWz_VElnXljJUNedJFDxuWt4RNlaIOsYXWqE0no47fzK8Oo7UXOG4tg7s3Z9jzDBeNYdVZybFRS1wwQe4GVUx0CxLj8MRZwA8yxrY_n0YeupHYHV5BIsFHJDONPRP5MLf9BrpWHtu_umw38vhn2Wf8cKPb20MqMSGNe5gV2-_0000)
+
+
+## 任务三
+
+任务二、三录屏：https://www.bilibili.com/video/BV1M341117YN?spm_id_from=333.999.0.0

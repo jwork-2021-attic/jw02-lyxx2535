@@ -9,7 +9,7 @@ public class Scene {
     public static void main(String[] args) throws IOException {
 
         Line line = new Line(7);
-        line.put(Gourd.ONE, 6);
+        line.put(Gourd.ONE, 6);// 前面是真值，后面是数组位置
         line.put(Gourd.TWO, 3);
         line.put(Gourd.THREE, 1);
         line.put(Gourd.FOUR, 5);
@@ -21,12 +21,12 @@ public class Scene {
 
         Sorter sorter = new BubbleSorter();
 
-        theGeezer.setSorter(sorter);
+        theGeezer.setSorter(sorter);// 老头拥有了冒泡排序器
 
-        String log = theGeezer.lineUp(line);
+        String log = theGeezer.lineUp(line);// 输出内容java -jar asciianimator.jar -f result.txt -l false -c true -fps 3
 
         BufferedWriter writer;
-        writer = new BufferedWriter(new FileWriter("result.txt"));
+        writer = new BufferedWriter(new FileWriter("result.txt"));// log写进文件，可以显示过程
         writer.write(log);
         writer.flush();
         writer.close();

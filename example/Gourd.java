@@ -4,7 +4,9 @@ import example.Line.Position;
 
 public enum Gourd implements Linable {
 
-    ONE(204, 0, 0),
+    // Random random = new Random();
+
+    ONE(0, 0, 0),
 
     TWO(255, 165, 0),
 
@@ -36,7 +38,7 @@ public enum Gourd implements Linable {
             if (gourd.rank() == rank) {
                 return gourd;
             }
-        }
+        } // 由值得对应的下标
         return null;
 
     }

@@ -1,12 +1,16 @@
-package example;
+package S201250215;
 
 public class Line {
+
+    private Position[] positions;
+
+    public Line() {
+
+    }
 
     public Line(int length) {
         this.positions = new Position[length];
     }
-
-    private Position[] positions;
 
     public void put(Linable linable, int i) {
         if (this.positions[i] == null) {
@@ -15,7 +19,7 @@ public class Line {
         this.positions[i].setLinable(linable);
     }
 
-    public Linable get(int i) {
+    public Linable get(int i) {// 通过数组的下标返回
         if ((i < 0) || (i > positions.length)) {
             return null;
         } else {
@@ -25,7 +29,7 @@ public class Line {
 
     class Position {
 
-        private Linable linable;
+        Linable linable;
 
         Position(Linable linable) {
             this.linable = linable;
@@ -40,9 +44,9 @@ public class Line {
 
     @Override
     public String toString() {
-        String lineString = "\t";
-        for (Position p : positions) {// 一个个格子显示出来
-            lineString += p.linable.toString();
+        String lineString = "";//
+        for (int i = 0; i < positions.length; i++) {// 一个个格子显示出来
+            lineString += positions[i].linable.toString();
         }
         return lineString;
     }

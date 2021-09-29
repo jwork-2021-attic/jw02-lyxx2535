@@ -1,0 +1,16 @@
+@startuml
+actor       七个娃排成的队 as hulu
+actor        老头   as oldman  #Black 
+entity      排序器 as sort #White
+entity      文件 as txt #Purple
+
+oldman -[#Grey]> sort : 获得
+note left: 老头拥有排序器
+
+oldman -[#Grey]> hulu : 排序
+note right:老爷爷指挥七个葫芦娃排序
+
+oldman -[#Grey]> oldman: 获得排序信息
+
+oldman -[#Grey]> txt: 将排序信息存入文件
+@enduml

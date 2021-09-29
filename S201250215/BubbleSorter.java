@@ -1,4 +1,4 @@
-package example;
+package S201250215;
 
 public class BubbleSorter implements Sorter {
 
@@ -25,7 +25,7 @@ public class BubbleSorter implements Sorter {
         while (!sorted) {
             sorted = true;// 没进来后就结束
             for (int i = 0; i < a.length - 1; i++) {
-                if (a[i] > a[i + 1]) {// 从小到大冒泡排序
+                if (a[i] > a[i + 1]) {// 从小到大冒泡排序 将rgb排序后应该交换value
                     swap(i, i + 1);
                     sorted = false;
                 }

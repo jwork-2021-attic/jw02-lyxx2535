@@ -1,0 +1,95 @@
+@startuml
+interface Sorter{
+    void load();
+    void sort();
+    String getPlan();
+}
+
+class BubbleSorter{
+
+    int[] a;
+    String plan;
+
+    void swap();
+
+}
+
+class QuickSorter{
+
+    int[] a;
+    String plan;
+
+    void quickSort();
+
+}
+
+class Linable{
+    int value;
+    Position position;
+    void setPosition();
+    Position getPosition();
+    void setValue();
+    int getValue();
+    void swapPosition();
+}
+
+
+
+class Line{
+    Position[] positions;
+
+    void put();
+    Linable get();
+    String toString();
+    Linable[] toArray();
+
+}
+
+class Position{
+    Linable linable;
+
+    void setLinable();
+
+}
+
+class Guard{
+    final int r;
+    final int g;
+    final int b;
+
+    Gourd getGourdByRank();
+    int rank();
+    String toString()
+    void swapPosition();
+}
+
+class Snake{
+    Sorter sorter;
+    void setSorter();
+    String lineUp();
+    String[] parsePlan();
+    void execute();
+}
+
+class Randomnnum{
+    int[] result;
+    int[] getResult();
+}
+
+Linable <|-- Guard
+
+Linable *-- Position
+
+Position --> Linable
+Sorter <|.. BubbleSorter
+
+Sorter <|.. QuickSorter
+
+Line +-- Position
+
+Snake o-- Sorter
+
+Snake ..> Line
+
+Line ..> Linable
+@enduml
