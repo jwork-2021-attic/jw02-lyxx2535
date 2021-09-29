@@ -49,5 +49,6 @@ Geezer表示老头，为了让葫芦娃排序并可视化，老人拥有成员�
 
 
 ## 任务三
-
+类图如下：
+![](http://www.plantuml.com/plantuml/png/bLFDJlCm4BpxANpyFb3o0a6ezD8BIAKLN107Dt6Zg8uT_5DQ1TwTZN-eDn98z19xTdTcPxTU6CkqTRqWdRHSxrdDwLPfE8w4mk-ekeOAnPf__wiBO20Z0LkhEzdIbjkrO792Fmcf1JE6Bjrk9tYYyzcWyl9A6IeTeAuY6Vix6oQU2z6Zw-h3dtdUKXKck-yaWxR6n4EFJ3WUcDRATBPJaWxna9lcDeM14AUtA8PgdYVs00Qv5c6PvyYGPfZroqSa1yvJVoOtFBYqbMGInEQBiYeSPfd0QTMTrkoCf_N08FiqPaZgOaH28dmhWip7AAPSEQQRKBs7kF1JqTKCQEV0BdAlbDFDPCmVbkSDauTylXhkFth-PUAflQraXp3m-1AeyH-yrX2QwS0G-DE0mMbPJ1iUNaT6ma-yTfOZRV3Ig5vAru_PtrnpuuIjCWJSRpmOgzCMRZwA8ipNOm68E_nEkW8eEISadMXHtDAOGe8xg2vBz8e9YcJFCifT8se_IQe0YqaHAKkln4DHk4RX1PUDwyKN)
 任务二、三录屏：https://www.bilibili.com/video/BV1M341117YN?spm_id_from=333.999.0.0
